@@ -4,7 +4,7 @@ An intelligent, full-stack CSV importer built for GrowEasy that extracts, cleans
 
 This application bypasses traditional hard-coded CSV parsers by utilizing Google's Gemini AI to intelligently interpret ambiguous columns, extract relevant CRM fields, and seamlessly handle messy datasets.
 
-**Live Application URL:** [Insert your Cloud Run URL here]
+**Live Application URL:** (https://ai-powered-csv-importer-142562810332.asia-southeast1.run.app/)
 
 ---
 

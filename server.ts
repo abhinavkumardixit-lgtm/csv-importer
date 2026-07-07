@@ -5,7 +5,7 @@ import { GoogleGenAI, Type, Schema } from "@google/genai";
 import 'dotenv/config';
 
 const app = express();
-app.use(express.json({ limit: "50mb" })); // Increase limit for large JSON payloads
+app.use(express.json({ limit: "50mb" })); 
 
 const PORT = 3000;
 const ai = new GoogleGenAI({
@@ -89,16 +89,15 @@ ${JSON.stringify(batch, null, 2)}`;
       } catch (parseError) {
         console.error("Error parsing AI response for batch", parseError);
         console.log("Raw AI Response:", jsonStr);
-        // Push nulls or empties to maintain length or skip? Let's just continue
+        
       }
     }
 
-    // Filter logic: Skip if neither email nor mobile
+  
     const successfullyParsed: any[] = [];
     const skippedRecords: any[] = [];
     
-    // In case the AI skipped some or returned fewer, we map by index if possible, 
-    // but the AI is instructed to return 1:1.
+  
     allExtractedRecords.forEach((record, index) => {
       const hasEmail = record.email && record.email.trim().length > 0;
       const hasMobile = record.mobile_without_country_code && record.mobile_without_country_code.trim().length > 0;
